@@ -1,5 +1,6 @@
 import MasterCalendar from '@/components/calendar/MasterCalendar';
-import { Hotel, Users, MapPin, Search } from 'lucide-react';
+import { Hotel, Users, Bed, Image as ImageIcon, LayoutGrid } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Home() {
     return (
@@ -17,14 +18,15 @@ export default function Home() {
                         </div>
                     </div>
                     
-                    <div className="flex items-center gap-4 bg-white p-4 rounded-[28px] border border-gray-100 shadow-sm">
-                        <div className="w-10 h-10 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-400">
-                            <Users size={20} />
-                        </div>
-                        <div>
-                            <p className="text-lg font-black text-gray-900">324</p>
-                            <p className="text-[8px] font-black text-gray-400 uppercase tracking-tighter">Aktif Misafir</p>
-                        </div>
+                    <div className="flex gap-4">
+                        <Link href="/rooms" className="flex items-center gap-3 bg-white px-6 py-4 rounded-[24px] border border-gray-100 shadow-sm hover:border-emerald-500 transition-all group">
+                            <Bed size={20} className="text-gray-400 group-hover:text-emerald-500" />
+                            <span className="text-xs font-black uppercase tracking-widest text-gray-600 group-hover:text-gray-900">Odalarım</span>
+                        </Link>
+                        <Link href="/gallery" className="flex items-center gap-3 bg-white px-6 py-4 rounded-[24px] border border-gray-100 shadow-sm hover:border-blue-500 transition-all group">
+                            <ImageIcon size={20} className="text-gray-400 group-hover:text-blue-500" />
+                            <span className="text-xs font-black uppercase tracking-widest text-gray-600 group-hover:text-gray-900">Galeri</span>
+                        </Link>
                     </div>
                 </div>
 
